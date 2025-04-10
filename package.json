@@ -23,5 +23,8 @@
     "markdownlint-cli": "^0.44.0",
     "textlint": "^14.6.0",
     "textlint-rule-preset-ja-technical-writing": "^12.0.2"
+  },
+  "dependencies": {
+    "textlint-rule-preset-ja-spacing": "^2.4.3"
   }
 }
