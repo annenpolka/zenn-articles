@@ -45,5 +45,35 @@
     "intention": "記事の変更をリモートリポジトリに反映させるため",
     "context": "初回記事コミット＆プッシュ作業の一環",
     "parentId": "5bac2ae7-e6c3-40de-9523-a0338871b574"
+  },
+  {
+    "id": "e13ba14a-d897-47fb-84f4-eb6bcc638518",
+    "timestamp": "2025-04-10T07:57:15.771Z",
+    "type": "file_operation",
+    "level": "info",
+    "summary": "roo-logger-introduction.mdにZenn用フロントマターを追加",
+    "details": {
+      "file": "articles/roo-logger-introduction.md",
+      "operation": "insert_content",
+      "insertedLines": "YAML frontmatter 約13行",
+      "position": "ファイル冒頭"
+    },
+    "intention": "Zenn CLIの仕様に準拠し、記事の管理・公開を容易にするため",
+    "context": "roo-logger解説記事の整備作業の一環"
+  },
+  {
+    "id": "44e013f0-4b43-4608-9969-d406d4fac87d",
+    "timestamp": "2025-04-10T07:59:52.784Z",
+    "type": "command_execution",
+    "level": "info",
+    "summary": "git commit -m \"Add Zenn frontmatter to roo-logger-introduction.md\"",
+    "details": {
+      "command": "git commit -m \"Add Zenn frontmatter to roo-logger-introduction.md\"",
+      "exit_code": 0,
+      "output": "[main 12e3b0f] Add Zenn frontmatter to roo-logger-introduction.md\n 1 file changed, 13 insertions(+)",
+      "success": true
+    },
+    "intention": "Zenn記事の構造変更を履歴に残すため",
+    "context": "roo-logger解説記事の整備作業の一環"
   }
 ]
