@@ -1,7 +1,7 @@
 ---
-title: "roo-logger: Cline Memory Bank とは違うAIの記憶システムを（MCPで）作った理由"
-emoji: "📝"
-type: "tech"
+title: 'roo-logger: Cline Memory Bank とは違うAIの記憶システムを（MCPで）作った理由'
+emoji: '📝'
+type: 'tech'
 topics:
   - AI
   - MCP
@@ -10,15 +10,13 @@ topics:
 published: false
 ---
 
-# roo-logger: Cline Memory Bank とは違うAIの記憶システムを（MCPで）作った理由
+[roo-logger](https://github.com/annenpolka/roo-logger)という MCP サーバーを作ったので紹介します。これは[Cline Memory Bank](https://docs.cline.bot/improving-your-prompting-skills/cline-memory-bank)とは違ったアプローチで AI の記憶を管理するツールです。
 
-[roo-logger](https://github.com/annenpolka/roo-logger)というMCPサーバーを作ったので紹介します。これは[Cline Memory Bank](https://docs.cline.bot/improving-your-prompting-skills/cline-memory-bank)とは違ったアプローチで AI の記憶を管理するツールです。
+最近、AI との協業どころか vibe coding で全て書かせてしまおうなんて話もある中で、「AI が何をしたか覚えていない問題」が顕在化してきました。特に Roo Code のような自律型エージェントが大量のファイル操作やコマンド実行をする場合、同じセッションを使い続けることはコンテキスト長的に不可能です。
 
-最近、AIとの協業どころかvibe codingで全て書かせてしまおうなんて話もある中で、「AIが何をしたか覚えていない問題」が顕在化してきました。特に Roo Code のような自律型エージェントが大量のファイル操作やコマンド実行をする場合、同じセッションを使い続けることはコンテキスト長的に不可能です。
+そして、Memory Bank はプロジェクトの知識を構造化するのに素晴らしいシステムですが、「AI がどうして何をしたのか」の詳細な記録には向いていないと感じました。
 
-そして、Memory Bank はプロジェクトの知識を構造化するのに素晴らしいシステムですが、「AIがどうして何をしたのか」の詳細な記録には向いていないと感じました。
-
-セッションが違えばAIが一貫した方向性で編集してくれるかは運試しになりやすく（特にRoo-Codeのboomerang task機能を使う時など）、大抵の場合（vibe codingの元来の意図には反して）AIの行動に細かくフィードバックを与えたりする（それを覚えて・思い出していてほしい）ので、行動単位の記録が必要だなと考えました。
+セッションが違えば AI が一貫した方向性で編集してくれるかは運試しになりやすく（特に Roo-Code の boomerang task 機能を使う時など）、大抵の場合（vibe coding の元来の意図には反して）AI の行動に細かくフィードバックを与えたりする（それを覚えて・思い出していてほしい）ので、行動単位の記録が必要だなと考えました。
 
 そこで Memory Bank とは異なるアプローチを考え、AI の行動履歴に特化した roo-logger を開発しました。
 
@@ -35,7 +33,7 @@ Memory Bank をしばらく使ってみて気づいた課題をまとめてみ�
 
 これらの課題を解決するために、AI の行動履歴に特化したロガーを作ることにしました。JSON 形式で構造化し、AI から直接呼び出せる MCP サーバーとして実装することで、AI が自分の活動履歴を自動的に記録し、後から検索できるようにしています。
 
-## roo-loggerの基本設計
+## roo-logger の基本設計
 
 roo-logger の基本設計は、「何をしたか」「なぜそうしたのか」「どう関連しているのか」を構造化して記録することです。ログはこんな感じの JSON 形式で保存されます：
 
@@ -130,7 +128,7 @@ Roo Code では、`.roo/mcp.json` ファイルに上記の設定を追加しま�
 
 roo-logger を単体で使う場合は、以下のようなプロンプトがおすすめです。
 
-```
+```bash
 ## 活動記録に関する重要なルール
 
 あなたは全ての重要な活動を記録するために roo-activity-logger のlog_activityを使用して`logs/`に記録してください。
@@ -167,21 +165,22 @@ roo-logger を単体で使う場合は、以下のようなプロンプトがお
 
 両方のシステムを併用する場合は、以下のようなプロンプトをお試しください。
 
-```
-あなたはプロジェクト作業を進める際に、以下の2つの記憶システムを活用してください：
+```markdown
+あなたはプロジェクト作業を進める際に、以下の 2 つの記憶システムを活用してください：
 
 1. Memory Bank (知識の管理)
-   - memory-bank/フォルダ内のMarkdownファイルを読んでプロジェクト知識を理解する
+
+   - memory-bank/フォルダ内の Markdown ファイルを読んでプロジェクト知識を理解する
    - 重要な決定や知識を獲得したら、適切なファイルを更新する
-   - 特に作業開始時は必ずMemory Bankの内容を確認する
+   - 特に作業開始時は必ず Memory Bank の内容を確認する
 
 2. roo-logger (行動履歴の記録)
-   - すべての重要な操作（コード生成、ファイル操作、コマンド実行など）をlog_activityで記録する
+   - すべての重要な操作（コード生成、ファイル操作、コマンド実行など）を log_activity で記録する
    - 必ず「intention」と「context」を含める
-   - タスクが複数の小タスクに分かれる場合は、親子関係をparentIdで表現する
-   - 作業再開時には、search_logsで過去のログを検索して前回の状態を思い出す
+   - タスクが複数の小タスクに分かれる場合は、親子関係を parentId で表現する
+   - 作業再開時には、search_logs で過去のログを検索して前回の状態を思い出す
 
-これらの記憶システムは相補的な関係にあります。Memory Bankでプロジェクトの「大きな地図」を理解し、roo-loggerで「具体的な作業履歴」を管理してください。
+これらの記憶システムは相補的な関係にあります。Memory Bank でプロジェクトの「大きな地図」を理解し、roo-logger で「具体的な作業履歴」を管理してください。
 ```
 
 ## MCP ツールの詳細
@@ -291,4 +290,4 @@ AI との協業が進む中で、こうした記憶システムの重要性は�
 
 Memory Bank のファイル構造はこれでいいとして、行動履歴の部分は roo-logger で補完する。そんなアプローチを試してみてほしいです。
 
-https://github.com/annenpolka/roo-logger
+<https://github.com/annenpolka/roo-logger>

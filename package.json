@@ -1,0 +1,24 @@
+{
+  "name": "zenn-articles",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:md": "markdownlint articles/**/*.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annenpolka/zenn-articles.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/annenpolka/zenn-articles/issues"
+  },
+  "homepage": "https://github.com/annenpolka/zenn-articles#readme",
+  "description": "",
+  "devDependencies": {
+    "markdownlint-cli": "^0.44.0"
+  }
+}
