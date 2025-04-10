@@ -1,3 +1,16 @@
+---
+title: "roo-logger: Cline Memory Bank とは違うAIの記憶システムを（MCPで）作った理由"
+emoji: "📝"
+type: "tech"
+topics:
+  - AI
+  - MCP
+  - Cline
+  - MemoryBank
+  - ログ管理
+published: false
+---
+
 # roo-logger: Cline Memory Bank とは違うAIの記憶システムを（MCPで）作った理由
 
 [roo-logger](https://github.com/annenpolka/roo-logger)というMCPサーバーを作ったので紹介します。これは[Cline Memory Bank](https://docs.cline.bot/improving-your-prompting-skills/cline-memory-bank)とは違ったアプローチで AI の記憶を管理するツールです。
