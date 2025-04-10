@@ -7,7 +7,7 @@ topics:
   - MCP
   - Cline
   - Roo Code
-published: false
+published: true
 ---
 
 [roo-logger](https://github.com/annenpolka/roo-logger)というMCPサーバーを作ったので紹介します。これは[Cline Memory Bank](https://docs.cline.bot/improving-your-prompting-skills/cline-memory-bank)とは違ったアプローチでAIの記憶を管理するツールです。
