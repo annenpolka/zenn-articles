@@ -10,24 +10,20 @@ published: false
 
 ## はじめに
 
-- まず、このプロジェクトはさめざめさんのccresumeに多大な影響を受けています。ありがとうございます
-- この記事はAIの助力を受けながら書いていますが、アプリはちゃんと存在します（大体バイブコーディング）
+- まず、このプロジェクトはさめざめさんの ccresume に多大な影響を受けています。ありがとうございます！
+- この記事は AI の助力を受けながら書いていますが、アプリはちゃんと存在します（大体バイブコーディング）
 
 ## 何をするアプリか
 
-(画像を入れる)
+https://www.youtube.com/watch?v=7y5t9dcmjl8
 
 https://github.com/annenpolka/cclog
 
 - `~/.claude/projects`配下にある会話ログを一覧表示、マークダウンとしてプレビューしたりエディタで開いたりできます
 
-
-
-
-
 ## 既知の問題・やりたいこと
 
-- Claude Codeがmarkdownの見出し(##）などを使った時、ちゃんとした階層構造じゃなくなります
+- Claude Code が markdown の見出し(##）などを使った時、ちゃんとした階層構造じゃなくなります
   - コードブロックにしたりするのも考えましたが、「いい感じ」に見えることを優先して現状そのままにしてます
-- resume機能をつけようとは思っていますが、躓いています
-  - ログからsessionId取って`ccresume -r <sessionId>`するだけだと`No conversation found with session ID` になることがあるんですけど、なぜ…
+- resume 機能をつけようとは思っていますが、躓いています
+  - ログから sessionId 取って`ccresume -r <sessionId>`するだけだと`No conversation found with session ID` になることがあるんですけど、なぜ…
