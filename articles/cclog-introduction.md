@@ -15,6 +15,10 @@ published: false
 
 まず、このプロジェクトはさめざめさんの[ccresume](https://github.com/sasazame/ccresume)に多大な影響を受けています。ありがとうございます！
 
+Claude Codeに技術的質問をしてそのログをとる習慣があるのですが、当初それをプロンプト＋カスタムコマンドでClaude Code自身にmarkdownとして書いてもらっていました。ターミナルの中で完結し、WebUIをコピペするよりも楽なのが嬉しいところです。
+
+しかし、**ユーザーの回答を捏造し始めたりした**（LLMにやらせているので仕方ない）ので「生のログファイルをちゃんと触ってパースしよう」ということになり、[cclog](https://github.com/annenpolka/cclog)を作りました。
+
 ## 何をするアプリか
 
 https://www.youtube.com/watch?v=7y5t9dcmjl8
@@ -24,7 +28,7 @@ https://github.com/annenpolka/cclog
 - `~/.claude/projects`配下にある会話ログを一覧表示、マークダウンとしてプレビューしたりエディタで開いたりできます
   - EDITOR環境変数で設定されたエディタで自動的に開いてくれます（vimでもvscodeでも）
   - 一時ファイルとして開くので、とりあえず見たいだけの時もcwdは汚さずに済みます
-- 見やすさのために会話以外のノイズになる内容は省略するフィルター機能がついています
+- 見やすさのために会話以外のノイズになる内容（システムメッセージなど）は省略するフィルター機能がついています
   - （デフォルトでオンですが、sキーでトグルできるようになっています）
 
 
@@ -33,13 +37,6 @@ https://github.com/annenpolka/cclog
 ```bash
 go install github.com/annenpolka/cclog/cmd/cclog@latest
 ```
-
-## 作った理由
-
-- Claude Codeに技術的質問をしてそのログをとる習慣があるのですが、当初それをプロンプト＋カスタムコマンドでClaude Code自身にmarkdownとして書いてもらっていました
-  - ターミナルの中で完結し、WebUIをコピペするよりも楽なのが嬉しいところです
-
-- が、**ユーザーの回答を捏造し始めたりした**（LLMにやらせているので仕方ない）ので「生のログファイルをちゃんと触ってパースしよう」ということに
 
 ## 技術的選択とその感想
 
@@ -53,6 +50,4 @@ go install github.com/annenpolka/cclog/cmd/cclog@latest
 
 - Claude Code が 回答にmarkdown の見出し(##）を使った時、セマンティックな階層構造が崩壊します
   - コードブロックにする等考えましたが、見た目「いい感じ」に見えることを優先して現状そのままにしてます
-- resume 機能をつけようとは思っていますが、躓いています
-  - ログから sessionId 取って`ccresume -r <sessionId>`するだけだと`No conversation found with session ID` になることがあるんですけど、なぜ…
 - プレビューの縦幅をレスポンシブにしたい（これはできそう）
