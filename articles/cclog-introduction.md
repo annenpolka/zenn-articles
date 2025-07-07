@@ -9,7 +9,6 @@ topics:
   - terminal
   - bubbletea
 published: true
-published_at: 2050-07-07 19:00
 ---
 
 ## はじめに
@@ -18,7 +17,7 @@ published_at: 2050-07-07 19:00
 
 Claude Codeに技術的質問をしてそのログをとる習慣があるのですが、当初それをプロンプト＋カスタムコマンドでClaude Code自身にmarkdownとして書いてもらっていました。ターミナルの中で完結し、WebUIをコピペするよりも楽なのが嬉しいところです。
 
-しかし、**ユーザーの回答を捏造し始めたりした**（LLMにやらせているので仕方ない）ので「生のログファイルをちゃんと触ってパースしよう」ということになり、[cclog](https://github.com/annenpolka/cclog)を作りました。
+しかし、**ユーザーの回答を捏造し始めたりした**（LLMにやらせているので仕方ない）ので、「生のログファイル（jsonlファイルなので加工の必要あり）をちゃんと触ってパースしよう」ということになり、[cclog](https://github.com/annenpolka/cclog)を作りました。
 
 ## 何をするアプリか
 
