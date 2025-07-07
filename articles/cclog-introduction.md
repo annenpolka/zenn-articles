@@ -49,4 +49,3 @@ go install github.com/annenpolka/cclog/cmd/cclog@latest
 
 - Claude Code が 回答に markdown の見出し(##）を使った時、見出しの階層構造が崩れます
   - コードブロックにする等考えましたが、見た目「いい感じ」に見えることを優先して現状そのままにしてます
-- ~~プレビューの縦幅をレスポンシブにしたい（これはできそう）~~→ しました
