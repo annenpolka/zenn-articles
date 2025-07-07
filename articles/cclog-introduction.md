@@ -22,7 +22,7 @@ Claude Code に技術的質問をしてそのログをとる習慣があるの�
 
 ## 何をするアプリか
 
-https://www.youtube.com/watch?v=7y5t9dcmjl8
+https://www.youtube.com/watch?v=iexFYGWVpbc
 
 https://github.com/annenpolka/cclog
 
@@ -49,4 +49,4 @@ go install github.com/annenpolka/cclog/cmd/cclog@latest
 
 - Claude Code が 回答に markdown の見出し(##）を使った時、見出しの階層構造が崩れます
   - コードブロックにする等考えましたが、見た目「いい感じ」に見えることを優先して現状そのままにしてます
-- ~~プレビューの縦幅をレスポンシブにしたい（これはできそう）~~→しました
+- ~~プレビューの縦幅をレスポンシブにしたい（これはできそう）~~→ しました
