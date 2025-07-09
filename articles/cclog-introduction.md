@@ -48,3 +48,7 @@ go install github.com/annenpolka/cclog/cmd/cclog@latest
 
 - Claude Codeが回答にmarkdownの見出し(##）を使った時、見出しの階層構造が崩れます
   - コードブロックにする等考えましたが、見た目「いい感じ」に見えることを優先して現状そのままにしてます
+
+## 追記（7/9）
+
+セッションのresume機能やセッションIDのコピー機能を追加しました！ぜひお試しください！
